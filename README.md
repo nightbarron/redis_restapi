@@ -67,7 +67,7 @@ _* : required_
 
 ##### Request
 
-```json
+```jsunicoderegexp
 curl -L -X PUT 'localhost:8080/v1/keys' 
 --header 'Content-Type: application/json' 
 --data '{
