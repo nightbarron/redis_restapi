@@ -1,5 +1,10 @@
 # Redis REST API
 
+## Run
+```bash
+docker run -d -p 8080:8080 redis-rest:latest
+```
+
 ## Structure
 ```go
 type RedisDataModel struct {
