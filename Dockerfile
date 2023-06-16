@@ -23,10 +23,12 @@ RUN mkdir /app
 WORKDIR /app
 
 # Copy the binary from the builder stage
-COPY --from=builder /app/main /app/
+COPY --from=builder /app/main /app
+RUN mkdir /app/configs
+COPY --from=builder /app/configs/config.json /app/configs/config.json
 
 EXPOSE 8080
 EXPOSE 6379
 
 # Run the binary
-CMD ["/app/main"]
+CMD redis-server --daemonize yes && /app/main
